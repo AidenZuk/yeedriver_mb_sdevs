@@ -1,0 +1,42 @@
+/**
+ * Created by zhuqizhong on 17-5-15.
+ */
+
+const ModbusBase = require('yeedriver-modbustcpconv').ModbusBase;
+const async = require('async-q');
+const _ = require('lodash');
+class  PH extends ModbusBase {
+    constructor(devId,mbClient) {
+        super(devId,mbClient);
+    }
+
+    WriteWQ(mapItem, value) {
+        this.mbClient.setID(this.devId);
+        let reg_quantity = (mapItem.end - mapItem.start + 1);
+        let buf = new Array(reg_quantity);
+        for (let i = 0; i < reg_quantity; i++) {
+            buf[i] = value[mapItem.start + i];
+        }
+
+        return this.mbClient.writeRegisters(mapItem.start, buf);
+    };
+    ReadWQ (mapItem){
+
+        return this.CreateWQReader(mapItem,function(reg,results){
+            switch(reg){
+                case 1: //PH
+                    return this.mbClient.readHoldingRegisters(0, 1).then(function(newData){
+                        results.push( newData.data[0]/100);
+                    });
+                    break;
+
+
+                default:
+                    results.push ( undefined );
+                    break;
+            }
+        });
+
+    };
+}
+module.exports = PH;

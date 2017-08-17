@@ -1,0 +1,22 @@
+{
+  "name": "yeedriver_mb_sdevs",
+  "version": "1.0.0",
+  "description": "driver for single modbus devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plotozhu/yeedriver_mb_sdevs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plotozhu/yeedriver_mb_sdevs/issues"
+  },
+  "homepage": "https://github.com/plotozhu/yeedriver_mb_sdevs#readme",
+  "dependencies": {
+    "yeedriver-modbustcpconv": "^1.0.0"
+  }
+}
