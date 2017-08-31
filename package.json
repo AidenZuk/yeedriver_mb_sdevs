@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/plotozhu/yeedriver_mb_sdevs#readme",
   "dependencies": {
+    "yeedriver-base": "^1.0.0",
     "yeedriver-modbustcpconv": "^1.0.0"
+
   }
 }
