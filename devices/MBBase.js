@@ -5,6 +5,10 @@ const async = require('async-q');
 const Q = require('q');
 const _ = require('lodash');
 class MBBase {
+    constructor(devId,mbClient){
+        this.devId = devId;
+        this.mbClient = mbClient;
+    }
     /**
      * 针对每一个mapItem的项，调用一次regReader，具有一个参数( reg)，代表所要读取的寄存器， 返回读取的值即可
      * @param mapItem  数据项

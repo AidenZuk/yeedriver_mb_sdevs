@@ -19,11 +19,14 @@ const MAX_WRITE_CNT = 50;
  *
  * 第一版本  {devId,devType}
  */
-function MbDevices(maxSegLength, minGapLength) {
-    ModbusBase.call(this, maxSegLength, minGapLength);
+class MbDevices extends ModbusBase{
+    constructor(maxSegLength, minGapLength){
+        super(maxSegLength, minGapLength);
+    }
+
 
 }
-util.inherits(MbDevices, ModbusBase);
+
 
 MbDevices.prototype.initDriver = function (options) {
     ModbusBase.prototype.initDriver(options);
