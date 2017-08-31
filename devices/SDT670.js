@@ -2,7 +2,7 @@
  * Created by zhuqizhong on 17-5-15.
  */
 
-const ModbusBase = require('yeedriver-modbustcpconv');
+const ModbusBase = require('./MBBase');
 const async = require('async-q');
 const _ = require('lodash');
 /***
