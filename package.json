@@ -1,6 +1,6 @@
 {
   "name": "yeedriver-mb-sdevs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "driver for single modbus devices",
   "main": "index.js",
   "scripts": {
