@@ -23,7 +23,7 @@ function MbDevices(maxSegLength, minGapLength) {
     ModbusBase.call(this, maxSegLength, minGapLength);
 
 }
-util.inherits(Modbus, ModbusBase);
+util.inherits(MbDevices, ModbusBase);
 
 MbDevices.prototype.initDriver = function (options) {
     ModbusBase.prototype.initDriver(options);
