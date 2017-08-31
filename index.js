@@ -19,13 +19,13 @@ const MAX_WRITE_CNT = 50;
  *
  * 第一版本  {devId,devType}
  */
-function Modbus(maxSegLength, minGapLength) {
+function MbDevices(maxSegLength, minGapLength) {
     ModbusBase.call(this, maxSegLength, minGapLength);
 
 }
 util.inherits(Modbus, ModbusBase);
 
-Modbus.prototype.initDriver = function (options) {
+MbDevices.prototype.initDriver = function (options) {
     ModbusBase.prototype.initDriver(options);
 
     _.each(options.sids, function (type, devId) {
@@ -49,5 +49,5 @@ Modbus.prototype.initDriver = function (options) {
 
 };
 
-module.exports = new ModbusBase();
+module.exports = new MbDevices();
 
