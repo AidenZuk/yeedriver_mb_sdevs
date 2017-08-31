@@ -29,7 +29,7 @@ class MbDevices extends ModbusBase{
 
 
 MbDevices.prototype.initDriver = function (options) {
-    ModbusBase.prototype.initDriver(options);
+    ModbusBase.prototype.initDriver.call(this,options);
 
     _.each(options.sids, function (type, devId) {
         let classType = require("./devices/" + type);
