@@ -21,7 +21,7 @@ class  PM25 extends ModbusBase {
         return this.mbClient.writeRegisters(mapItem.start, buf);
     };
     ReadWQ (mapItem){
-
+        this.mbClient.setID(this.devId);
         return this.CreateWQReader(mapItem,function(reg,results){
             switch(reg){
                 case 1: //PM2.5
